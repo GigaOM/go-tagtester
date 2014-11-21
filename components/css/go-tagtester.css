@@ -1,0 +1,31 @@
+/* styles for go-tagtester plugin */
+#titlewrap {
+	position: relative;
+}
+
+#titlediv #title {
+	padding-right: 3rem;
+}
+
+.go-tag-tester {
+	background: rgba( 0, 0, 0, .1 );
+	border-radius: 6px;
+	color: rgba( 0, 0, 0, .3 );
+	display: inline-block;
+	padding: .25rem;
+	position: absolute;
+	right: .5rem;
+	top: .4rem;
+}
+
+.go-title-length-alert-count {
+	font-weight: bold;
+}
+
+#titlediv #title.go-title-length-alert-alert {
+	background-color: #ffe9ab;
+}
+
+#titlediv #title.go-title-length-alert-high-alert {
+	background-color: #ffd2d2;
+}
