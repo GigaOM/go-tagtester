@@ -29,3 +29,8 @@
 #titlediv #title.go-title-length-alert-high-alert {
 	background-color: #ffd2d2;
 }
+
+fieldset {
+	display: inline;
+
+}

@@ -3,7 +3,7 @@
 		<legend>Variables</legend>
 		<fieldset>
 			<legend> Submit </legend>
-			<label> Body Count </label> <textarea name="body_count" cols="100" rows"1"></textarea>
+			<label> Body Count </label> <textarea id="body_count" name="body_count" cols="100" rows"1"></textarea>
 		</fieldset>
 		<fieldset>
 			<legend> Weighting </legend>

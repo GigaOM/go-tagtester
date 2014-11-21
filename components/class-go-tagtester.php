@@ -55,13 +55,22 @@ class GO_TagTester
 		add_rewrite_endpoint( 'tag-tester', EP_ALL );
 	}//END init
 
+	public function get_template_part( $template_name )
+	{
+		ob_start();
+		include dirname( __FILE__ . '/templates/' . $template_name );
+		return ob_get_clean();
+	}//end get_template_part
+
 	public function template_redirect() {
+
 		global $wp_query;
 
     	// if this is not a request for tag-tester or a singular object then bail
-    	if ( ! isset( $wp_query->query_vars['tag-tester'] ) || ! is_singular() )
-        	return;
+    	//if ( ! isset( $wp_query->query_vars['tag-tester'] ) || ! is_singular() )
+        //	return;
 
+        include dirname( __FILE__ ) . '/templates/tagtester-submit.php';
     	// include custom template
     	include dirname( __FILE__ ) . '/templates/go-tagtester.php';
     	exit;
