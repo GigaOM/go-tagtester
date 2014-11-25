@@ -30,7 +30,8 @@
 	background-color: #ffd2d2;
 }
 
-fieldset {
-	display: inline;
-
+#open_calais_tester_submit {
+	padding-right: 3rem;
+	display: inline-block;
+	background-color: white;
 }

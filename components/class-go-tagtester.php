@@ -14,6 +14,7 @@ class GO_TagTester
 	public function __construct()
 	{
 		add_action( 'init', array( $this, 'init' ) );
+		add_action( 'go_tag_tester_submit', array( $this, 'go_tag_tester_submit' ) );
 	}//END __construct
 
 	/**
@@ -51,29 +52,29 @@ class GO_TagTester
 
 	public function init()
 	{
-		add_action( 'template_redirect', array( $this, 'template_redirect' ) );
+		add_filter( 'template_include', array( $this, 'template_include' ) );
 		add_rewrite_endpoint( 'tag-tester', EP_ALL );
 	}//END init
 
-	public function get_template_part( $template_name )
+	public function template_include( $template_file_name )
 	{
-		ob_start();
-		include dirname( __FILE__ . '/templates/' . $template_name );
-		return ob_get_clean();
-	}//end get_template_part
-
-	public function template_redirect() {
-
 		global $wp_query;
 
     	// if this is not a request for tag-tester or a singular object then bail
-    	//if ( ! isset( $wp_query->query_vars['tag-tester'] ) || ! is_singular() )
-        //	return;
+    	if ( ! isset( $wp_query->query_vars['tag-tester'] ) ) {
+        	return $template_file_name;
+    	}
 
-        include dirname( __FILE__ ) . '/templates/tagtester-submit.php';
-    	// include custom template
-    	include dirname( __FILE__ ) . '/templates/go-tagtester.php';
-    	exit;
-	}//END template_redirect
+    	$template_file_name = __DIR__ . '/templates/tagtester-submit.php';
+
+    	return $template_file_name;
+	}//END template_include
+
+	public function go_tag_tester_submit (){
+
+
+
+
+	}
 
 }//END class
