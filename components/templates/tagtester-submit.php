@@ -6,10 +6,9 @@
 		<div><label> Headline </label> <textarea name="headline" 	id="headline" 	cols="50" rows"1"></textarea></div>
 		<div><label> Summary	</label> <textarea name="summary" 	id="summary" 	cols="50" rows"4"></textarea></div>
 		<div><label> Body </label> <textarea name="body" 		id="body"		cols="50" rows"15"></textarea></div>
-		<div><button id="submit" class="button set">Submit</button></div>
 	</fieldset>
 </form>
-<form id="open_calais_tester_variables" method="get">
+<form id="open_calais_tester_variables" method="post">
 	<fieldset>
 		<legend>Variables</legend>
 		<fieldset>
@@ -22,6 +21,7 @@
 			<div><label> Summary	</label> 	<textarea name="summary_weight" cols="8" rows"1"></textarea></div>
 			<div><label> Body </label>		<textarea name="body_weight" cols="8" rows"1"></textarea></div>
 		</fieldset>
+		<div><button id="submit" class="button set">Submit</button></div>
 </form>
 
 <form id="open_calais_tester_results" method="get">

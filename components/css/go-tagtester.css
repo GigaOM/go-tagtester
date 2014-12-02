@@ -22,8 +22,8 @@
 	font-weight: bold;
 }
 
-#titlediv #title.go-title-length-alert-alert {
-	background-color: #ffe9ab;
+#open_calais_tester_variables {
+	background-color: red;
 }
 
 #titlediv #title.go-title-length-alert-high-alert {
@@ -33,5 +33,5 @@
 #open_calais_tester_submit {
 	padding-right: 3rem;
 	display: inline-block;
-	background-color: white;
+	background-color: red;
 }
