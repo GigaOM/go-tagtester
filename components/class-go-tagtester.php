@@ -19,8 +19,7 @@ class GO_TagTester
 		add_action( 'init', array( $this, 'init' ) );
 		add_action( 'go_tag_tester_submit', array( $this, 'go_tag_tester_submit' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'wp_enqueue_scripts' ) );
-		//add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
-		//add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
+
 	}//END __construct
 
 	public function wp_enqueue_scripts()
@@ -84,13 +83,11 @@ class GO_TagTester
 
 	public function init()
 	{
-		//wp_enqueue_style( $this->slug, plugins_url( '/css/go-tagtester.css', __FILE__ ) );
-		//wp_register_script( $this->slug, plugins_url( '/js/go-tagtester.js', __FILE__ ), array( 'jquery' ), FALSE, TRUE );
-
-		//wp_register_style( 'go-tagtester', plugins_url( 'css/go-tagtester.css', __FILE__ ), false, false, 'all' );
-
 		add_filter( 'template_include', array( $this, 'template_include' ) );
 		add_rewrite_endpoint( 'tag-tester', EP_ALL );
+
+
+
 	}//END init
 
 	public function template_include( $template_file_name )
@@ -111,8 +108,7 @@ class GO_TagTester
 	public function go_tag_tester_submit ()
 	{
 
-
-
+		go_opencalais()->get_tags($content);
 
 	}
 

@@ -1,32 +1,65 @@
+// create an instance of go_title_length_alert if we haven't already
+if ( 'undefined' === typeof go_tagtester ) {
+	var go_tagtester = {
+		event: {}
+	};
+}
 (function($){
 	'use strict';
 
 	go_tagtester.init = function() {
-		$(document).on( 'click', '#submit', go_tagtester.form_headline );
-		$(document).on( 'click', '#submit', go_tagtester.form_summary );
-		$(document).on( 'click', '#submit', go_tagtester.form_body );
+		$(document).on( 'click', '#submit', go_tagtester.submit );
 
-		go_opencalais.enrich();
+		//
+	};
+	go_tagtester.submit = function( e ) {
+		e.preventDefault();
+		$( '#body input:first' );
+		alert('body');
+		go_tagtester.enrich();
+
+	}
+
+	go_tagtester.enrich = function( ) {
+		var params = {
+			'action': 'go_tagtester_enrich',
+			'post_id': go_tagtester.post_id,
+			'nonce': go_tagtester.nonce
+		};
+
+		$.getJSON( ajaxurl, params, go_tagtester.enrich_callback );
 	};
 
 
-	// Toggle taglist
-	go_tagtester.form_headline = function( e ) {
-		alert("headline");
-		var headline = $( '#headline' ).val();
-		var headline_weight = $( '#headline_weight' ).val();
-	};
-	go_tagtester.form_summary = function( e ) {
-		alert("summary");
-		var summary = $( '#summary' ).val();
-		var summary_weight = $( '#summary_weight' ).val();
-	};
-	go_tagtester.form_body = function( e ) {
-		alert("body");
-		var body = $( '#body' ).val();
-		var body_weight = $( '#body_weight' ).val();
+	go_tagtester.enrich_callback = function( data, text_status, xhr ) {
+		var taxonomies = {};
+
+		for ( var prop in go_opencalais.taxonomy_map ) {
+			taxonomies[ go_opencalais.taxonomy_map[ prop ] ] = [];
+		}//end for
+
+		// Look at terms returned and add terms to their matching local taxonomy
+		$.each( data, function( idx, obj ) {
+			var type = obj._type;
+
+			if ( go_opencalais.taxonomy_map.hasOwnProperty( type ) ) {
+				taxonomies[ go_opencalais.taxonomy_map[ type ] ].push( obj );
+			}//end if
+		});
+
+		$.each( go_opencalais.local_taxonomies, function( taxonomy ) {
+			if ( taxonomies.hasOwnProperty( taxonomy ) && taxonomies[ taxonomy ].length  ) {
+				go_opencalais.enrich_taxonomy( taxonomy, taxonomies[ taxonomy ] );
+			} else {
+				go_opencalais.enrich_taxonomy( taxonomy, false );
+			}
+		});
+
+		$(document).trigger( 'go-tagtester.complete' );
+
 
 	};
+
 
 	$(function() {
 		go_tagtester.init();
