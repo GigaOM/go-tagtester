@@ -1,30 +1,32 @@
 <?php get_header(); ?>
-
-<form id="open_calais_tester_submit" method="post">
-	<fieldset>
+<form id="open_calais_tester_submit" method="POST" action="tagtester-submit">
+	<div class="submit_section">
+	<fieldset id="submit_fieldset">
 		<legend> Submit </legend>
-		<div><label> Headline </label> <textarea name="headline" 	id="headline" 	cols="50" rows"1"></textarea></div>
-		<div><label> Summary	</label> <textarea name="summary" 	id="summary" 	cols="50" rows"4"></textarea></div>
-		<div><label> Body </label> <textarea name="body" 		id="body"		cols="50" rows"15"></textarea></div>
+		<label> Headline </label><textarea name="headline"	rows="3"	cols="30" 	id="headline"></textarea> </br>
+		<label> Summary</label>   <textarea name="summary"  rows="5"	cols="30" 	id="summary"></textarea></br>
+		<label> Body </label> 	  <textarea name="body" 	rows="20"	cols="30" 	id="body"></textarea></br>
 	</fieldset>
-</form>
-<form id="open_calais_tester_variables" method="post">
-	<fieldset>
+	</div>
+	<div class="variables_section">
+	<fieldset id="variables_fieldset">
 		<legend>Variables</legend>
-		<fieldset>
+		<fieldset id="variables_submit_fieldset">
 			<legend> Submit </legend>
-			<div><label> Body Count </label> <textarea id="body_count" name="body_count" cols="8" rows"1"></textarea></div>
+			<label> Body Count </label> <textarea id="body_count" name="body_count" cols="8" rows="1"></textarea></br>
 		</fieldset>
-		<fieldset>
+		<fieldset id="variables_weighting_fieldset">
 			<legend> Weighting </legend>
-			<div><label> Headline </label> 	<textarea name="headline_weight" cols="8" rows"1"></textarea></div>
-			<div><label> Summary	</label> 	<textarea name="summary_weight" cols="8" rows"1"></textarea></div>
-			<div><label> Body </label>		<textarea name="body_weight" cols="8" rows"1"></textarea></div>
+			<div><label> Headline </label> 	<textarea name="headline_weight" cols="8" rows="1"></textarea></div>
+			<div><label> Summary	</label> 	<textarea name="summary_weight" cols="8" rows="1"></textarea></div>
+			<div><label> Body </label>		<textarea name="body_weight" cols="8" rows="1"></textarea></div>
 		</fieldset>
 		<div><button id="submit" class="button set">Submit</button></div>
+	</fieldset>
+	</div>
 </form>
 
-<form id="open_calais_tester_results" method="get">
+<form id="open_calais_tester_results" method="POST" action="tagtester-submit.php" >
 	<fieldset>
 		<legend> Results </legend>
 		<table>

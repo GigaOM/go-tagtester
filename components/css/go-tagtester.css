@@ -1,37 +1,60 @@
 /* styles for go-tagtester plugin */
-#titlewrap {
-	position: relative;
+#open_calais_tester_submit{
+	margin-bottom: 0px;
+	height: 575px;
 }
-
-#titlediv #title {
-	padding-right: 3rem;
-}
-
-.go-tag-tester {
-	background: rgba( 0, 0, 0, .1 );
-	border-radius: 6px;
-	color: rgba( 0, 0, 0, .3 );
+.submit_section {
 	display: inline-block;
-	padding: .25rem;
-	position: absolute;
-	right: .5rem;
-	top: .4rem;
+	width: 60%;
+	padding: 1rem;
+	padding-left: 2.5rem;
+	padding-bottom: 0px;
+
+}
+#submit_fieldset{
+	margin-top: 1rem;
+	margin-bottom: 0px;
 }
 
-.go-title-length-alert-count {
-	font-weight: bold;
+#summary{
+	height: 75px;
+
+}
+#body{
+	height: 208px;
 }
 
-#open_calais_tester_variables {
-	background-color: red;
-}
-
-#titlediv #title.go-title-length-alert-high-alert {
-	background-color: #ffd2d2;
-}
-
-#open_calais_tester_submit {
-	padding-right: 3rem;
+.variables_section {
 	display: inline-block;
-	background-color: red;
+	width:40%;
+	float: right;
+	padding: 1rem;
+	padding-right: 2.5rem;
+	padding-bottom: 0px;
+}
+#variables_fieldset {
+	margin: 0px;
+	margin-top: 1rem;
+}
+
+#variables_submit_fieldset {
+	margin-top: 0px;
+	padding-bottom: 0px;
+	padding-top: 10px;
+}
+
+#variables_weighting_fieldset{
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+}
+
+#body_count {
+	margin-bottom: 0px;
+}
+
+#open_calais_tester_results {
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-left: 10rem;
+	padding-right: 10rem;
 }
