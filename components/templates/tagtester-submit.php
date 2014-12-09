@@ -17,16 +17,16 @@
 		</fieldset>
 		<fieldset id="variables_weighting_fieldset">
 			<legend> Weighting </legend>
-			<div><label> Headline </label> 	<textarea name="headline_weight" cols="8" rows="1"></textarea></div>
-			<div><label> Summary	</label> 	<textarea name="summary_weight" cols="8" rows="1"></textarea></div>
-			<div><label> Body </label>		<textarea name="body_weight" cols="8" rows="1"></textarea></div>
+			<div><label> Headline </label> 	<textarea name="headline_weight" cols="8" rows="1" id="headline_weight"></textarea></div>
+			<div><label> Summary	</label> 	<textarea name="summary_weight" cols="8" rows="1" id="summary_weight"></textarea></div>
+			<div><label> Body </label>		<textarea name="body_weight" cols="8" rows="1" id="body_weight"></textarea></div>
 		</fieldset>
 		<div><button id="submit" class="button set">Submit</button></div>
 	</fieldset>
 	</div>
 </form>
 
-<form id="open_calais_tester_results" method="POST" action="tagtester-submit.php" >
+<form id="open_calais_tester_results" method="POST" action="tagtester-submit" hidden>
 	<fieldset>
 		<legend> Results </legend>
 		<table>

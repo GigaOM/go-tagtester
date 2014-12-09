@@ -25,15 +25,6 @@ class GO_TagTester
 
 	public function wp_enqueue_scripts()
 	{
-		//wp_enqueue_script( 'go-tagtester' );
-		//wp_enqueue_style( 'go-tagtester' );
-
-		//wp_register_style( 'go-tagtester', plugins_url( '/css/go-tagtester.css', __FILE__ ), NULL, $this->version, 'screen' );
-		//wp_enqueue_style( 'go-tagtester' );
-
-		//wp_register_style( 'go-tagtester', plugins_url( 'components/css/go-tagtester.css', __DIR__ ), array(), 1 );
-		//wp_enqueue_style( 'go-tagtester', plugins_url( 'css/go-tagtester.css', __FILE__ ) );
-
 		wp_register_style( 'go-tagtester', plugins_url( 'css/go-tagtester.css', __FILE__ ), FALSE, $this->version );
 		wp_enqueue_style( 'go-tagtester' );
 
@@ -93,7 +84,7 @@ class GO_TagTester
 
 	public function init()
 	{
-		wp_enqueue_style( $this->slug, plugins_url( '/css/go-tagtester.css', __FILE__ ) );
+		//wp_enqueue_style( $this->slug, plugins_url( '/css/go-tagtester.css', __FILE__ ) );
 		//wp_register_script( $this->slug, plugins_url( '/js/go-tagtester.js', __FILE__ ), array( 'jquery' ), FALSE, TRUE );
 
 		//wp_register_style( 'go-tagtester', plugins_url( 'css/go-tagtester.css', __FILE__ ), false, false, 'all' );
